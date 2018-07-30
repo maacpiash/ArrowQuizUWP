@@ -1,0 +1,41 @@
+﻿<Page
+    x:Class="App4.BasicPage1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App4"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid x:Name="LayoutRoot">
+
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Title Panel -->
+        <StackPanel Grid.Row="0" Margin="19,0,0,393" Grid.RowSpan="2">
+            <TextBlock Text="Question 1" Style="{ThemeResource TitleTextBlockStyle}" Margin="0,12,0,0" />
+        </StackPanel>
+
+        <!--TODO: Content should be placed within the following grid-->
+        <Grid Grid.Row="1" x:Name="ContentRoot" Margin="19,0,19,9" Loaded="ContentRoot_Loaded">
+            <TextBlock x:Name="explanation" HorizontalAlignment="Left" TextWrapping="Wrap" Text="After the sinking of his father's yacht, billionaire playboy Oliver Queen survived and was washed away to Lian Yu, a small remote island in South China Sea." VerticalAlignment="Top" Margin="0,492,0,0" Height="74" RenderTransformOrigin="0.537,0.63" Width="362" FontSize="15"/>
+        </Grid>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="What is the name of the island that Oliver Queen was stranded in?" VerticalAlignment="Top" Margin="20,40,0,0" Grid.Row="1" Height="129" Width="361" FontSize="30" FontFamily="Segoe WP" FontWeight="Bold"/>
+        <Button x:Name="Optn1" Content="Lian Yu" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,185,0,0" Grid.Row="1" Width="361" Click="Correct"/>
+        <Button x:Name="Optn2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,242,0,0" Grid.Row="1" Width="361" Content="Yian Lu" Click="Incorrect"/>
+        <Button x:Name="Optn3" Content="The Island of Punishment" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,298,0,0" Grid.Row="1" Width="361" Click="Incorrect"/>
+        <Button x:Name="Optn4" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,355,0,0" Grid.Row="1" Width="361" Content="The Island of Death" Click="Incorrect"/>
+        <TextBlock x:Name="result" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="20,439,0,0" Grid.Row="1" Height="41" Width="361" FontSize="30" TextAlignment="Center" FontWeight="Bold"/>
+        <Button x:Name="nextButn" Content="Next question &gt;&gt;" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="19,570,0,0" Grid.Row="1" Width="361" Click="nextButn_Click"/>
+    </Grid>
+</Page>
